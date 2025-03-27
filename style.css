@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+header {
+    padding: 50px 20% 50px;
+    border-bottom: solid 1px #000;
+}
+h1 {
+    font-size: 40px;
+}
+header p {
+    font-size: 24px;
+}
+
+main {
+    padding: 50px 20% 50px;
+}
+
+footer {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 記事挿入後のスタイル */
+.article {
+    margin-bottom: 60px;
+}
+.title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.flex {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.content {
+    max-width: 800px;
+    
+    font-size: 16px;
+    line-height: 1.6;
+}
