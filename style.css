@@ -1,22 +1,44 @@
 * {
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
 }
 
 header {
-    padding: 50px 20% 50px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 25px 20% 25px ;
     border-bottom: solid 1px #000;
+    background: white;
+
 }
+
 h1 {
     font-size: 40px;
 }
-header p {
-    font-size: 24px;
+.headSub {
+    font-size: 18px;
 }
 
+select {
+    width: 100%;
+}
+.filterBox {
+    display: flex;
+    gap: 50px;
+}
+.searchFlex {
+    display: flex;
+    gap: 10px;
+}
+.searchBtn {
+    cursor: pointer;
+}
 main {
-    padding: 50px 20% 50px;
+    padding: 250px 20% 50px;
 }
 
 footer {
