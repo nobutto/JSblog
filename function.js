@@ -2,6 +2,7 @@ const main = document.querySelector("#main");
 const select = document.querySelector(".select");
 const searchBtn = document.querySelector(".searchBtn");
 const input = document.querySelector("input");
+const headerWrapper = document.querySelector('.header_wrapper')
 let articles; //記事一覧
 
 //初期読み込み
@@ -89,35 +90,52 @@ select.addEventListener("change", () => {
 });
 
 //検索機能
-searchBtn.addEventListener("click", () => {
-  //１度記事と検索０ヒット文を消去
-  deleteHtml();
-
-  const searchWord = input.value; //検索ワード
-  //空白の場合全て表示
-  if (searchWord === "") {
-    renderArticles(articles);
-    return;
+searchBtn.addEventListener("click", searchArticles);
+//enterで検索可能
+input.addEventListener('keydown', (event) => {
+  if(event.key === "Enter") {
+    searchBtn.click();
   }
+})
 
-  const copiedArticles = [...articles];
-  const filteredArticles = copiedArticles.filter((article) => {
-    return article.content.includes(searchWord);
-  });
+function searchArticles() {
+    //１度記事と検索０ヒット文を消去
+    deleteHtml();
 
-  if (filteredArticles.length > 0) {
-    renderArticles(filteredArticles);
-  } else {
-    const notHitTxt = document.createElement("p");
-    notHitTxt.classList.add("notHitTxt");
-    notHitTxt.textContent =
-      "すみません、その検索ワードに関連する記事はないので他を当たってください";
-    main.append(notHitTxt);
-  }
-});
+    const searchWord = input.value; //検索ワード
+    //空白の場合全て表示
+    if (searchWord === "") {
+      renderArticles(articles);
+      return;
+    }
+  
+    const copiedArticles = [...articles];
+    const filteredArticles = copiedArticles.filter((article) => {
+      return article.content.includes(searchWord) || article.title.includes(searchWord);
+    });
+  
+    if (filteredArticles.length > 0) {
+      renderArticles(filteredArticles);
+      //検索ヒット数を表示
+      const searchResult = document.createElement("p");
+      searchResult.classList.add('searchResult');
+      searchResult.textContent = `検索結果 : ${filteredArticles.length}`;
+      headerWrapper.append(searchResult);
+    } else {
+      const notHitTxt = document.createElement("p");
+      notHitTxt.classList.add("notHitTxt");
+      notHitTxt.textContent =
+        "すみません、その検索ワードに関連する記事はないので他を当たってください";
+      main.append(notHitTxt);
+    }
+}
 
 //検索、カテゴリー時の初期化
 function deleteHtml() {
+  const searchResultTxt = document.querySelector('.searchResult');
+  if (searchResultTxt != null) {
+    searchResultTxt.remove();
+  }
   const notHitTxt = document.querySelector(".notHitTxt");
   if (notHitTxt != null) {
     notHitTxt.remove();

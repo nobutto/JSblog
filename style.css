@@ -6,13 +6,16 @@
 
 header {
     position: fixed;
+    width: 100%;
+    padding: 25px 20% 35px ;
+    border-bottom: solid 1px #000;
+    background: white;
+}
+.header_wrapper {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 25px 20% 25px ;
-    border-bottom: solid 1px #000;
-    background: white;
 
 }
 
@@ -65,4 +68,12 @@ footer {
     
     font-size: 16px;
     line-height: 1.6;
+}
+
+.searchResult {
+    position: absolute;
+    bottom: -22px;
+    right: 0;
+    font-size: 20px;
+    font-weight: 500;
 }
