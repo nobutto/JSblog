@@ -120,12 +120,12 @@ function searchArticles() {
       const searchResult = document.createElement("p");
       searchResult.classList.add('searchResult');
       searchResult.textContent = `検索結果 : ${filteredArticles.length}`;
-      headerWrapper.append(searchResult);
+      main.prepend(searchResult);
     } else {
       const notHitTxt = document.createElement("p");
       notHitTxt.classList.add("notHitTxt");
       notHitTxt.textContent =
-        "すみません、その検索ワードに関連する記事はないので他を当たってください";
+        "すみません、その検索ワードに関連する記事はまだ書いていません、、、";
       main.append(notHitTxt);
     }
 }

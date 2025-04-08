@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Blog</title>
+    <title>noblog</title>
+    <meta name=”robots” content=”noindex,nofollow”>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- header ------------------>
     <header class="header">
         <div class="header_wrapper">
-            <div class="head">
-                <h1>JS Blog</h1>
-                <p class="headSub">聖書くらい読まれる予定のブログ。</p>
-            </div>
             <div class="filterBox">
                 <div class="selectBox">
                     <p class="selectLabel">カテゴリー</p>
@@ -23,7 +24,7 @@
                     </select>
                 </div>
                 <div class="searchBox">
-                    <p class="searchLabel">検索</p>
+                    <p class="searchLabel">ワード検索</p>
                     <div class="searchFlex">
                         <input type="text" class="input">
                         <button class="searchBtn">検索</button>
@@ -32,13 +33,21 @@
             </div>
         </div>
     </header>
+    <!-- fv ------------------------->
 
+    <div class="fv">
+        <div class="fv__head">
+            <h1 class="fv__ttl">noblog</h1>
+            <p class="fv__txt">ドラゴンボールくらい読まれる予定のブログ。<br>JSでゼロから作っています (機能は随時追加していく予定)。</p>
+        </div>
+    </div>
+    <!-- 記事 ------------------------>
     <main id="main">
 
     </main>
 
     <footer>
-        <p>&copy; JS Blog</p>
+        <p>&copy; noblog</p>
     </footer>
     <script src="function.js"></script>
 </body>

@@ -1,15 +1,28 @@
+:root {
+    --bg: #7ec5d3;
+    --txt: #fff;
+    --sub: #f19f5f;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Noto Sans JP", sans-serif;
+}
+body {
+    background: var(--bg);
+    
 }
 
+/* header---------- */
 header {
+    z-index: 2;
     position: fixed;
     width: 100%;
-    padding: 25px 20% 35px ;
-    border-bottom: solid 1px #000;
-    background: white;
+    padding: 7px 20% 17px ;
+    background: var(--sub);
+    color: var(--txt);
 }
 .header_wrapper {
     position: relative;
@@ -19,16 +32,21 @@ header {
 
 }
 
-h1 {
-    font-size: 40px;
-}
-.headSub {
-    font-size: 18px;
+select {
+    width: 100px;
+    outline: none;
+    border: none;
+    padding: 2px 4px;
+    
+
 }
 
-select {
-    width: 100%;
+input {
+    border: none;
+    outline: none;
+    padding: 0px 0px 0 5px;
 }
+
 .filterBox {
     display: flex;
     gap: 50px;
@@ -39,19 +57,59 @@ select {
 }
 .searchBtn {
     cursor: pointer;
-}
-main {
-    padding: 250px 20% 50px;
+    border: none;
+    outline: none;
+    padding: 2px 4px;
 }
 
+/* fv---------------------------- */
+.fv {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    
+    background: url(fv.jpg) center 25px / cover;
+}
+.fv__head  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    text-align: center;
+    line-height: 1.6;
+}
+.fv__ttl {
+    font-size: 50px;
+    color: var(--txt);
+    margin-bottom: 10px;
+}
+.fv__txt {
+    font-size: 18px;
+    color: var(--txt);
+}
+
+/* main---------------------- */
+#main {
+    padding: 100px 20% 278px;
+    background: var(--bg);
+    color: var(--txt);
+}
+
+/* footer---------------------- */
 footer {
+    padding: 10px 0 10px;
     font-size: 12px;
     text-align: center;
+    background: var(--bg);
+    color: var(--txt);
 }
 
-/* 記事挿入後のスタイル */
+/* 記事挿入後のスタイル------------*/
 .article {
     margin-bottom: 60px;
+}
+.article:last-child {
+    margin-bottom: 0;
 }
 .title {
     font-size: 20px;
@@ -63,17 +121,25 @@ footer {
     gap: 10px;
     margin-bottom: 10px;
 }
+
+.date {
+    font-weight: 300;
+    font-size: 14px;
+}
+.category {
+    font-size: 14px;
+    font-weight: 300;
+}
 .content {
-    max-width: 800px;
-    
     font-size: 16px;
     line-height: 1.6;
 }
 
 .searchResult {
-    position: absolute;
-    bottom: -22px;
-    right: 0;
+    text-align: center;
+    margin-bottom: 50px;
     font-size: 20px;
-    font-weight: 500;
+}
+.notHitTxt {
+    text-align: center;
 }
